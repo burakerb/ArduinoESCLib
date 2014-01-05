@@ -8,8 +8,8 @@ Allows easy interfacing to Electronics Speed Controllers for brushless motors us
 Installation
 ------------
 
-1)  Obtain a copy of this repository by your preferred means (clone, Zip archive)
-2)  Copy the ```ESC``` folder to your Arduino libraries folder
+1.  Obtain a copy of this repository by your preferred means (clone, Zip archive)
+2.  Copy the ```ESC``` folder to your Arduino libraries folder
 
 Usage
 -----

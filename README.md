@@ -14,4 +14,4 @@ Installation
 Usage
 -----
 
-See full [reference]().
+See full [reference](https://github.com/DanNixon/ArduinoESCLib/blob/master/REFERENCE.md).

@@ -11,7 +11,7 @@
 #define DEFAULT_CONTROL_MIN 0
 #define DEFAULT_CONTROL_MAX 100
 #define DEFAULT_SERVO_MIN 10
-#define DEFAULT_SERVO_MAX 179
+#define DEFAULT_SERVO_MAX 169
 
 #include <Arduino.h>
 #include <Servo.h>

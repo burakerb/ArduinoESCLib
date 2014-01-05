@@ -1,0 +1,22 @@
+#######################################
+# Syntax Coloring Map For ESC
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+ESC	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+attach	KEYWORD2
+speed	KEYWORD2
+stop	KEYWORD2
+read	KEYWORD2
+control_min	KEYWORD2
+control_max	KEYWORD2
+servo_min	KEYWORD2
+servo_max	KEYWORD2

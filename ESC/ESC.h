@@ -8,10 +8,13 @@
 #ifndef ESC_H
 #define ESC_H
 
+#define ERROR_STATE -1
+#define ERROR_RANGE -2
+
 #define DEFAULT_CONTROL_MIN 0
 #define DEFAULT_CONTROL_MAX 100
 #define DEFAULT_SERVO_MIN 10
-#define DEFAULT_SERVO_MAX 169
+#define DEFAULT_SERVO_MAX 179
 
 #include <Arduino.h>
 #include <Servo.h>
@@ -30,10 +33,11 @@ class ESC
     int control_max();
     int control_min(int);
     int control_max(int);
-    int servo_min();
-    int servo_max();
-    int servo_min(int);
-    int servo_max(int);
+    int output_min();
+    int output_max();
+    int output_min(int);
+    int output_max(int);
+
   private:
     Servo servo;
     int i_pin;

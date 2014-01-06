@@ -27,75 +27,63 @@ void ESC::attach(int pin)
   this->servo.attach(pin);
 }
 
+int ESC::speed() { return this->i_speed; }
+
 int ESC::speed(int speed)
 {
   if(!this->servo.attached())
-    return -1;
+    return ERROR_STATE;
+  if((speed > this->i_control_max) || (speed < this->i_control_min))
+    return ERROR_RANGE;
   this->i_speed = speed;
   int value = map(this->i_speed, this->i_control_min, this->i_control_max, this->i_servo_min, this->i_servo_max);
   this->servo.write(value);
-  return this->i_speed;
+  return this->speed();
 }
 
-int ESC::speed()
-{
-  return this->i_speed;
-}
-
-int ESC::stop()
-{
-  return this->speed(0);
-}
+int ESC::stop() { return this->speed(0); }
 
 int ESC::read()
 {
+  if(!this->servo.attached())
+    return ERROR_STATE;
   return this->servo.read();
 }
 
-int ESC::control_min()
-{
-  return this->i_control_min;
-}
-
-int ESC::control_max()
-{
-  return this->i_control_max;
-}
+int ESC::control_min() { return this->i_control_min; }
+int ESC::control_max() { return this->i_control_max; }
 
 int ESC::control_min(int control_min)
 {
-  //TODO: Check for dodgy input
+  if(control_min >= this->i_control_max)
+    return ERROR_RANGE;
   this->i_control_min = control_min;
-  return 0;
+  return this->control_min();
 }
 
 int ESC::control_max(int control_max)
 {
-  //TODO: Check for dodgy input
+  if(control_max <= this->i_control_min)
+    return ERROR_RANGE;
   this->i_control_max = control_max;
-  return 0;
+  return this->control_max();
 }
 
-int ESC::servo_min()
-{
-  return this->i_servo_min;
-}
+int ESC::output_min() { return this->i_servo_min; }
+int ESC::output_max() { return this->i_servo_max; }
 
-int ESC::servo_max()
+int ESC::output_min(int servo_min)
 {
-  return this->i_servo_max;
-}
-
-int ESC::servo_min(int servo_min)
-{
-  //TODO: Check for dodgy input
+  if((servo_min >= this->i_servo_max) || (servo_min < 0))
+    return ERROR_RANGE;
   this->i_servo_min = servo_min;
-  return 0;
+  return this->output_min();
 }
 
-int ESC::servo_max(int servo_max)
+int ESC::output_max(int servo_max)
 {
-  //TODO: Check for dodgy input
+  if(servo_max <= this->i_servo_min)
+    return ERROR_RANGE;
   this->i_servo_max = servo_max;
-  return 0;
+  return this->output_max();
 }

@@ -18,5 +18,5 @@ stop	KEYWORD2
 read	KEYWORD2
 control_min	KEYWORD2
 control_max	KEYWORD2
-servo_min	KEYWORD2
-servo_max	KEYWORD2
+output_min	KEYWORD2
+output_max	KEYWORD2

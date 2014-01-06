@@ -27,16 +27,22 @@ Returns the servo output value by calling ```Servo::read()``` on the wrapped Ser
 
 __```int ESC::control_min([int control_min])```__
 
-Optionally sets and returns the minimum input value, i.e. the input value to be passed to ```ESC::speed(int)``` which corresponds to zero throttle.
+Default: 0  
+Optionally sets and returns the minimum input value, i.e. the input value to be passed to ```ESC::speed(int)``` which corresponds to zero throttle.  
+This can be set to a value most appopriate for the application.  
 
 __```int ESC::control_max([int control_max])```__
 
-Optionally sets and returns the maximum input value, i.e. the input value to be passed to ```ESC::speed(int)``` which corresponds to full throttle.
+Default: 100  
+Optionally sets and returns the maximum input value, i.e. the input value to be passed to ```ESC::speed(int)``` which corresponds to full throttle.  
+This can be set to a value most appopriate for the application.
 
-__```int ESC::servo_min([int servo_min])```__
+__```int ESC::output_min([int servo_min])```__
 
-Optionally sets and returns the minimum servo output value, i.e. the value passed to ```Servo::write(int)``` on the wrapped Servo object for zero throttle.
+Default: 10  
+Optionally sets and returns the minimum servo output value, i.e. the value passed to ```Servo::write(int)``` on the wrapped Servo object for zero throttle (usually best close to zero).
 
-__```int ESC::servo_max([int servo_max])```__
+__```int ESC::output_max([int servo_max])```__
 
-Optionally sets and returns the maximum servo output value, i.e. the value passed to ```Servo::write(int)``` on the wrapped Servo object for full throttle.
+Default: 179  
+Optionally sets and returns the maximum servo output value, i.e. the value passed to ```Servo::write(int)``` on the wrapped Servo object for full throttle (usually best close to 180).

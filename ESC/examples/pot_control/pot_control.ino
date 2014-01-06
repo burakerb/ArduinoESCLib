@@ -14,7 +14,7 @@ void setup()
 {
   Serial.begin(115200);     //Let's have some debug data
   esc.attach(9);            //Our ESC is on pin 9
-  esc.control_max(1000);    //Max. throttle is max analogRead value
+  esc.control_max(1023);    //Max. throttle is max analogRead value
 }
  
 void loop()

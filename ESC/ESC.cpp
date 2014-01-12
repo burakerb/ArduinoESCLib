@@ -37,7 +37,7 @@ int ESC::speed(int speed)
     return ERROR_RANGE;
   this->i_speed = speed;
   int value = map(this->i_speed, this->i_control_min, this->i_control_max, this->i_servo_min, this->i_servo_max);
-  this->servo.write(value);
+  this->servo.writeMicroseconds(value);
   return this->speed();
 }
 

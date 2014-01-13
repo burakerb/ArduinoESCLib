@@ -39,10 +39,10 @@ This can be set to a value most appopriate for the application.
 
 __```int ESC::output_min([int servo_min])```__
 
-Default: 10  
-Optionally sets and returns the minimum servo output value, i.e. the value passed to ```Servo::write(int)``` on the wrapped Servo object for zero throttle (usually best close to zero).
+Default: 700  
+Optionally sets and returns the minimum servo output timing value in microseconds, i.e. the value passed to ```Servo::writeMicroseconds(int)``` on the wrapped Servo object for zero throttle (usually best close to zero).
 
 __```int ESC::output_max([int servo_max])```__
 
-Default: 179  
-Optionally sets and returns the maximum servo output value, i.e. the value passed to ```Servo::write(int)``` on the wrapped Servo object for full throttle (usually best close to 180).
+Default: 2500  
+Optionally sets and returns the maximum servo output timing value in microseconds, i.e. the value passed to ```Servo::writeMicroseconds(int)``` on the wrapped Servo object for full throttle (usually best close to 180).

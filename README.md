@@ -16,7 +16,7 @@ Usage
 
 See full [reference](https://github.com/DanNixon/ArduinoESCLib/blob/master/REFERENCE.md).
 
-By default the library accepts a value for speed between 0 and 100 and will output a servo value between 10 and 179, these values can be changed with the appropriate functions described in the reference (the default values can be changed in ```ESC.h```).
+By default the library accepts a value for speed between 0 and 100 and will output a servo timing value between 700us and 2500us, these values can be changed with the appropriate functions described in the reference (the default values can be changed in ```ESC.h```).
 
 It may take a little trial and error to find values wich work perfectly with a given ESC, however since most ESCs have the ability to set the throttle range then the default servo output range should work in most cases.
 

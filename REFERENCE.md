@@ -25,6 +25,10 @@ __```int ESC::read()```__
 
 Returns the servo output value by calling ```Servo::read()``` on the wrapped Servo object.
 
+__```int ESC::read_microseconds()```__
+
+Returns the servo output timing in microseconds.
+
 __```int ESC::control_min([int control_min])```__
 
 Default: 0  

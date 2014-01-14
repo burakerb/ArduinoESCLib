@@ -36,8 +36,8 @@ int ESC::speed(int speed)
   if((speed > this->i_control_max) || (speed < this->i_control_min))
     return ERROR_RANGE;
   this->i_speed = speed;
-  int value = map(this->i_speed, this->i_control_min, this->i_control_max, this->i_servo_min, this->i_servo_max);
-  this->servo.writeMicroseconds(value);
+  this->i_microtime = map(this->i_speed, this->i_control_min, this->i_control_max, this->i_servo_min, this->i_servo_max);
+  this->servo.writeMicroseconds(this->i_microtime);
   return this->speed();
 }
 
@@ -49,6 +49,8 @@ int ESC::read()
     return ERROR_STATE;
   return this->servo.read();
 }
+
+int ESC::read_microseconds() { return this->i_microtime; }
 
 int ESC::control_min() { return this->i_control_min; }
 int ESC::control_max() { return this->i_control_max; }

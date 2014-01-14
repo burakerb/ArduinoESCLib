@@ -19,11 +19,11 @@ void setup()
  
 void loop()
 {
-  int val = analogRead(0);    //Get a value from the pot.
-  if(val <= 10) val = 0;      //Becasue no pot. is perfect
-  int speed = esc.speed(val); //Set the ESC speed
-  Serial.print(speed);        //Print some debug data
-  Serial.print("\t-\t");      //Some nicely formatted debug data
-  Serial.println(esc.read()); //Lots of nicely formatted debug data
-  delay(10);                  //yukkuri shiteitte ne
+  int val = analogRead(0);                  //Get a value from the pot.
+  if(val <= 10) val = 0;                    //Becasue no pot. is perfect
+  int speed = esc.speed(val);               //Set the ESC speed
+  Serial.print(speed);                      //Print some debug data
+  Serial.print("\t-\t");                    //Some nicely formatted debug data
+  Serial.println(esc.read_microseconds());  //Lots of nicely formatted debug data
+  delay(10);                                //yukkuri shiteitte ne
 }

@@ -29,6 +29,7 @@ class ESC
     int speed(int);
     int stop();
     int read();
+    int read_microseconds();
     int control_min();
     int control_max();
     int control_min(int);
@@ -42,6 +43,7 @@ class ESC
     Servo servo;
     int i_pin;
     int i_speed;
+    int i_microtime;
     int i_control_min;
     int i_control_max;
     int i_servo_min;

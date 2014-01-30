@@ -27,6 +27,16 @@ void ESC::attach(int pin)
   this->servo.attach(pin);
 }
 
+int ESC::arm() { return this->i_armed; }
+
+int ESC::arm(int armed)
+{
+  this->i_armed = armed;
+  if(!this->i_armed)
+    this->stop();
+  return this->arm();
+}
+
 int ESC::speed() { return this->i_speed; }
 
 int ESC::speed(int speed)
@@ -35,6 +45,8 @@ int ESC::speed(int speed)
     return ERROR_STATE;
   if((speed > this->i_control_max) || (speed < this->i_control_min))
     return ERROR_RANGE;
+  if((speed > 0) && !this->i_armed)
+    return ERROR_STATE;
   this->i_speed = speed;
   this->i_microtime = map(this->i_speed, this->i_control_min, this->i_control_max, this->i_servo_min, this->i_servo_max);
   this->servo.writeMicroseconds(this->i_microtime);

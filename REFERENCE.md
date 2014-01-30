@@ -13,6 +13,11 @@ __```void ESC::attach(int pin)```__
 
 Attaches the wrapped Servo object to ```pin```.
 
+__```int ESC::arm([int armed])```__
+
+Optionally arms or disarms the ESC and returned the armed state.  
+Note that this only affects calls to ```speed(int)```, hence eill not protect against direct control of the ESC pin.
+
 __```int ESC::speed([int speed])```__
 
 Optionally sets and returns a new ESC speed.

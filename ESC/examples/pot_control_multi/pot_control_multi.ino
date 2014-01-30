@@ -20,6 +20,7 @@ void setup()
   {
     esc[i].attach(first_pin + i);
     esc[i].control_max(1023);
+    esc[i].arm(1);
   }
 }
  

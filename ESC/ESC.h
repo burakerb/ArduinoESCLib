@@ -25,6 +25,8 @@ class ESC
     ESC();
     ~ESC();
     void attach(int);
+    int arm();
+    int arm(int);
     int speed();
     int speed(int);
     int stop();
@@ -42,6 +44,7 @@ class ESC
   private:
     Servo servo;
     int i_pin;
+    int i_armed;
     int i_speed;
     int i_microtime;
     int i_control_min;

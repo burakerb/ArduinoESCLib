@@ -26,6 +26,8 @@ void setup()
   esc.output_min(10);
   esc.output_max(179);
 
+  esc.arm(1);
+
   esc.speed(esc.control_max());
   delay(4000);                    //May need to be tuned on a per-ESC basis
   esc.speed(esc.control_min());

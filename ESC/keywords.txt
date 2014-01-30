@@ -13,6 +13,7 @@ ESC	KEYWORD1
 #######################################
 
 attach	KEYWORD2
+arm	KEYWORD2
 speed	KEYWORD2
 stop	KEYWORD2
 read	KEYWORD2
